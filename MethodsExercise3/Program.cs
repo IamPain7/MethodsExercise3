@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualBasic;
@@ -11,12 +12,7 @@ namespace MethodsExercise3
     {
         static void Main(string[] args)
         {
-
-            counter();
-            Console.WriteLine(counterTwo(2, 8));
-            isOdd(6);
-            positiveNegative(-1);
-            userAge();
+            multiplication();
 
         }
 
@@ -29,7 +25,7 @@ namespace MethodsExercise3
             }
         }
         //Write a method to accept two integers as parameters and check whether they are equal or not.
-        public static bool counterTwo(int a, int b)
+        public static bool isEqual(int a, int b)
         {
 
             var check = (a == b) ? true : false;
@@ -76,16 +72,16 @@ namespace MethodsExercise3
 
         }
 
-        //Write a method to read the age of a candidate and determine whether they can vote. Hint: use Parse()... or the safer TryParse() for an extra challenge!!
-        public static void userAge()
+//Write a method to read the age of a candidate and determine whether they can vote. Hint: use Parse()... or the safer TryParse() for an extra challenge!!
+        public static void ageCheck()
         {
 
             Console.WriteLine(" How old are you");
-            var age = new Random();
-            var legalAge = age.Next(19, 100);
+           // var age = new Random();
+           // var legalAge = age.Next(19, 100);
             var userInput = int.Parse(Console.ReadLine());
 
-            if (userInput > legalAge)
+            if (userInput >= 18)
             {
                 Console.WriteLine($"{userInput} You can vote!");
 
@@ -94,11 +90,75 @@ namespace MethodsExercise3
             {
 
                 Console.WriteLine("You must be 19 or above to vote");
+            }
+
+
+
+        }
+
+
+        public static void isRange()
+        {
+
+            //Write a method to check if an integer (from the user) is in the range -10 to 10
+            // we can use index 
+            //we can use for 
+            // we can use range0
+            Console.WriteLine("input a number");
+            var userInput = int.Parse(Console.ReadLine());
+
+
+            if (userInput>=-10 && userInput <=10)
+            {
+
+
+                Console.WriteLine("Correct");
+
+            }
+            else
+            {
+
+                Console.WriteLine("incorrect");
 
 
             }
 
+
+
         }
+
+        public static void threes()
+        {
+            for (int i = 3; i < 999; i += 3) 
+            {
+
+                Console.WriteLine(i);
+
+            }
+
+
+        }
+
+        //Write a method to display the multiplication table(from 1 to 12) of a given integer.
+
+
+        public static void multiplication()
+        {
+
+
+            for (int i = 1; i > 12; i++)
+            {
+                
+            Console.WriteLine($"{i} * { i}");
+
+
+            }
+        
+
+
+        }
+
+
     }
 }
 
